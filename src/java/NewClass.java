@@ -1,4 +1,6 @@
 
+import Services.UserServices;
+import Services.UserServicesImp;
 import model.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -8,19 +10,11 @@ import util.NewHibernateUtil;
 
 public class NewClass {
     public static void main(String[] args) {
-        Session session = NewHibernateUtil.getSessionFactory().openSession();
-        User user;
+        UserServices userServices = new UserServicesImp();
         
-        try {
-            session.beginTransaction();
-            user = new User("Mohamed Emad", "mohamed085", "MO0420", "mohamed085@gmail.com", "customer");
-            session.save(user);
-            session.getTransaction().commit();
-
-        } catch (HibernateException e) {
-            session.getTransaction().rollback();
-            e.printStackTrace();
-        }
+        User user = userServices.login("mohamed085", "MO0420");
+        System.out.println(user.toString());
+        NewHibernateUtil.getSessionFactory().close();
     }
     
 }
