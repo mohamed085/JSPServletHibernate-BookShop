@@ -1,23 +1,26 @@
 
-import enums.Role;
 import model.User;
-import services.UserServices;
-import services.UserServicesImp;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import util.NewHibernateUtil;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Mohamed
- */
+
 public class NewClass {
     public static void main(String[] args) {
-        UserServices userServices = new UserServicesImp();
-        System.out.println(userServices.save(new User("admin", "admin", "admin", "admin@gmail.com", Role.ADMIN)));
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        User user;
+        
+        try {
+            session.beginTransaction();
+            user = new User("Mohamed Emad", "mohamed085", "MO0420", "mohamed085@gmail.com", "customer");
+            session.save(user);
+            session.getTransaction().commit();
+
+        } catch (HibernateException e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        }
     }
     
 }
