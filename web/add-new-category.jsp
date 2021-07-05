@@ -212,10 +212,10 @@
                                 <div class="col-xl-12">
                                     <div class="card card-statistics">
                                         <div class="card-body">
-                                            <form>
+                                            <form action="<%=request.getContextPath()%>/categories?action=add" method="post">
                                                 <div class="form-group">
-                                                    <label for="exampleInputEmail1">Category Type</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category Type">
+                                                    <label for="type">Category Type</label>
+                                                    <input type="text" name="type" class="form-control" id="type" placeholder="Enter category Type">
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Add new category</button>
                                             </form>

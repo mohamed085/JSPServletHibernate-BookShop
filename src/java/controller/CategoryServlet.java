@@ -55,6 +55,14 @@ public class CategoryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        action = request.getParameter("action");
+        if (action.equalsIgnoreCase("add")){
+            category = new Category(request.getParameter("type"));
+            categoryServices.save(category);
+            response.sendRedirect("./categories");
+            
+        }
+
     }
     
     protected void allCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
