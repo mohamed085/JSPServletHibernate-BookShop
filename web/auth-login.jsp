@@ -75,7 +75,7 @@
                                                         <button type="submit" class="btn btn-primary text-uppercase">Sign In</button>>
                                                     </div>
                                                     <div class="col-12  mt-3">
-                                                        <p>Don't have an account ?<a href="<%=request.getContextPath()%>/auth-register"> Sign Up</a></p>
+                                                        <p>Don't have an account ?<a href="<%=request.getContextPath()%>/register"> Sign Up</a></p>
                                                     </div>
                                                 </div>
                                             </form>

@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
      <head>
-        <title>Mentor - Bootstrap 4 Admin Dashboard Template</title>
+        <title>Register</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
@@ -45,7 +45,7 @@
                                         <div class="register p-5">
                                             <h1 class="mb-2">We are Mentor</h1>
                                             <p>Welcome, Please create your account.</p>
-                                            <form action="<%=request.getContextPath()%>/auth-register" method="post" class="mt-2 mt-sm-5">
+                                            <form action="<%=request.getContextPath()%>/register" method="post" class="mt-2 mt-sm-5">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group">
@@ -84,7 +84,7 @@
                                                         <button type="submit" class="btn btn-primary text-uppercase">Sign up</button>
                                                     </div>
                                                     <div class="col-12  mt-3">
-                                                        <p>Already have an account ?<a href="<%=request.getContextPath()%>/auth-login"> Sign In</a></p>
+                                                        <p>Already have an account ?<a href="<%=request.getContextPath()%>/login"> Sign In</a></p>
                                                     </div>
                                                 </div>
                                             </form>
