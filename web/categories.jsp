@@ -155,6 +155,16 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a class="has-arrow" aria-expanded="true">
+                                        <i class="nav-icon ti ti-rocket"></i>
+                                        <span class="nav-title">Products</span>
+                                    </a>
+                                    <ul aria-expanded="true">
+                                        <li> <a href="<%=request.getContextPath()%>/products" aria-expanded="false">All products</a> </li>                                   
+                                        <li> <a href="<%=request.getContextPath()%>/products?action=add">Add new product</a> </li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <a href="app-chat.html" aria-expanded="false">
                                         <i class="nav-icon ti ti-comment">
                                         </i><span class="nav-title">Chat</span>
@@ -225,7 +235,6 @@
                                                                     <a href="">Display</a> | 
                                                                     <a href="<%=request.getContextPath()%>/categories?action=delete&id=${category.id}">Delete</a> | 
                                                                     <a href="<%=request.getContextPath()%>/categories?action=update&id=${category.id}">Update</a> |
-                                                                    <a href="">Add sub category</a> | 
                                                                     <a href="">Add product</a>
                                                                 </td>
                                                             </tr>

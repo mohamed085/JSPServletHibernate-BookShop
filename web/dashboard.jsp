@@ -161,6 +161,16 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a class="has-arrow" aria-expanded="true">
+                                        <i class="nav-icon ti ti-rocket"></i>
+                                        <span class="nav-title">Products</span>
+                                    </a>
+                                    <ul aria-expanded="true">
+                                        <li> <a href="<%=request.getContextPath()%>/products" aria-expanded="false">All products</a> </li>                                   
+                                        <li> <a href="<%=request.getContextPath()%>/products?action=add">Add new product</a> </li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <a href="app-chat.html" aria-expanded="false">
                                         <i class="nav-icon ti ti-comment">
                                         </i><span class="nav-title">Chat</span>
