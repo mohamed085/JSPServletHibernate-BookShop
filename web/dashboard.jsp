@@ -355,7 +355,7 @@
                                         <span class="nav-title">Category</span>
                                     </a>
                                     <ul aria-expanded="false">
-                                        <li> <a href=''>All categories</a> </li>                                   
+                                        <li> <a class="has-arrow" href="<%=request.getContextPath()%>/categories" aria-expanded="false">All categories</a> </li>                                   
                                         <li> <a href=''>Add new category</a> </li>
                                     </ul>
                                 </li>
@@ -386,7 +386,7 @@
                                             <nav>
                                                 <ol class="breadcrumb p-0 m-b-0">
                                                     <li class="breadcrumb-item">
-                                                        <a href="index.html"><i class="ti ti-home"></i></a>
+                                                        <a href=""><i class="ti ti-home"></i></a>
                                                     </li>
                                                     <li class="breadcrumb-item">
                                                         Dashboard

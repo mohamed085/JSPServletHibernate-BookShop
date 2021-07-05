@@ -354,7 +354,7 @@
                                         <span class="nav-label label label-danger">9</span>
                                     </a>
                                     <ul aria-expanded="false">
-                                        <li> <a href="">All categories</a> </li>                                   
+                                        <li> <a class="has-arrow" href="<%=request.getContextPath()%>/categories" aria-expanded="false">All categories</a> </li>                                   
                                         <li> <a href='index-crm.html'>Add new category</a> </li>
 
                                     </ul>

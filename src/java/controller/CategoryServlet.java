@@ -22,10 +22,21 @@ import services.CategoryServicesImp;
  *
  * @author Mohamed
  */
-@WebServlet(name = "DashboardServlet", urlPatterns = {"/dashboard"})
-public class DashboardServlet extends HttpServlet {
-
+@WebServlet(name = "CategoryServlet", urlPatterns = {"/categories"})
+public class CategoryServlet extends HttpServlet {
+    
+    String action;
+    Category category;
+    CategoryServices categoryServices;
     RequestDispatcher dispatcher;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        categoryServices = new CategoryServicesImp();
+    }
+    
+    
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,15 +44,22 @@ public class DashboardServlet extends HttpServlet {
         if (username == null) {
             response.sendRedirect("page-404.jsp");            
         } else {
-            dispatcher = request.getRequestDispatcher("dashboard.jsp");  
-            dispatcher.forward(request, response);
+            action = request.getParameter("action");
+            if (action == null) {
+                doGetList(request, response);
+            }
         }
-        
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
+    
+    protected void doGetList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("categories", categoryServices.findAll());
+        dispatcher = request.getRequestDispatcher("categories.jsp");  
+        dispatcher.forward(request, response);
+
     }
 
 }

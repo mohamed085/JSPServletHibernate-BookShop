@@ -69,13 +69,13 @@ public class LoginServlet extends HttpServlet {
     }
     
     protected void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            dispatcher = request.getRequestDispatcher("auth-login.jsp");  
-            dispatcher.forward(request, response);
+        dispatcher = request.getRequestDispatcher("auth-login.jsp");  
+        dispatcher.forward(request, response);
     }
     
     protected void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            session.removeAttribute("username");
-            response.sendRedirect("auth-login.jsp");
+        session.removeAttribute("username");
+        response.sendRedirect("auth-login.jsp");
     }
     
     protected void profile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
