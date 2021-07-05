@@ -1,7 +1,7 @@
 package services;
 
 import DAO.UserDAO;
-import java.util.Set;
+import java.util.List;
 import model.User;
 
 public class UserServicesImp implements UserServices {
@@ -9,7 +9,7 @@ public class UserServicesImp implements UserServices {
     User user;
 
     @Override
-    public Set<User> findAll() {
+    public List<User> findAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
