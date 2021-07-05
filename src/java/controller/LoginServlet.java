@@ -45,14 +45,12 @@ public class LoginServlet extends HttpServlet {
         
         user = userServices.login(username, password);
         if (user != null) {
-            if (user.getRole().equalsIgnoreCase("customer")) {
-                session = request.getSession();
-                session.setAttribute("username", username);
+            session = request.getSession();
+            session.setAttribute("username", username);
+            if (user.getRole().equalsIgnoreCase("customer")) {  
                 response.sendRedirect("/");
             } else if (user.getRole().equalsIgnoreCase("admin")) {
-                session = request.getSession();
-                session.setAttribute("username", username);
-                response.sendRedirect("/dashboard");
+               response.sendRedirect("/dashboard");
             }
         } else {
             request.setAttribute("err", "Invalid username or password");
