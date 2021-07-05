@@ -14,10 +14,10 @@
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
         <meta name="author" content="Potenza Global Solutions" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="shortcut icon" href="assets/img/favicon.ico">
+        <link rel="shortcut icon" href="adminAssets/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="adminAssets/css/vendors.css" />
+        <link rel="stylesheet" type="text/css" href="adminAssets/css/style.css" />
     </head>
 
     <body class="bg-white">
@@ -29,7 +29,7 @@
                 <div class="loader">
                     <div class="h-100 d-flex justify-content-center">
                         <div class="align-self-center">
-                            <img src="assets/img/loader/loader.svg" alt="loader">
+                            <img src="adminAssets/img/loader/loader.svg" alt="loader">
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                                 <div class="col-sm-6 col-xxl-9 col-lg-7 bg-gradient o-hidden order-1 order-sm-2">
                                     <div class="row align-items-center h-100">
                                         <div class="col-7 mx-auto ">
-                                            <img class="img-fluid" src="assets/img/bg/login.svg" alt="">
+                                            <img class="img-fluid" src="adminAssets/img/bg/login.svg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -110,10 +110,10 @@
 
 
         <!-- plugins -->
-        <script src="assets/js/vendors.js"></script>
+        <script src="adminAssets/js/vendors.js"></script>
 
         <!-- custom app -->
-        <script src="assets/js/app.js"></script>
+        <script src="adminAssets/js/app.js"></script>
     </body>
 
 </html>
