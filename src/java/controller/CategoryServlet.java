@@ -46,9 +46,13 @@ public class CategoryServlet extends HttpServlet {
         } else {
             action = request.getParameter("action");
             if (action == null) {
-                allCategories(request, response);
+                getAllCategories(request, response);
             } else if (action.equalsIgnoreCase("add")) {
-                addCategory(request, response);
+                getAddNewCategory(request, response);
+            } else if (action.equalsIgnoreCase("delete")) {
+                getDeleteCategory(request, response);
+            } else if (action.equalsIgnoreCase("update")) {
+                getUpdateCategory(request, response);
             }
         }
     }
@@ -57,24 +61,48 @@ public class CategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         action = request.getParameter("action");
         if (action.equalsIgnoreCase("add")){
-            category = new Category(request.getParameter("type"));
-            categoryServices.save(category);
-            response.sendRedirect("./categories");
-            
+            postAddNewCategory(request, response);
+        } else if (action.equalsIgnoreCase("update")){
+            postUpdateCategory(request, response);
         }
 
     }
     
-    protected void allCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void getAllCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("categories", categoryServices.findAll());
         dispatcher = request.getRequestDispatcher("categories.jsp");  
         dispatcher.forward(request, response);
 
     }
     
-    protected void addCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void getAddNewCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         dispatcher = request.getRequestDispatcher("add-new-category.jsp");  
         dispatcher.forward(request, response);
     }
 
+    protected void getDeleteCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Long id = Long.parseLong(request.getParameter("id"));
+        categoryServices.deleteById(id);
+        response.sendRedirect("./categories");
+    }
+    
+    protected void getUpdateCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Long id = Long.parseLong(request.getParameter("id"));
+        request.setAttribute("category", categoryServices.findById(id));
+        dispatcher = request.getRequestDispatcher("update-category.jsp");  
+        dispatcher.forward(request, response);
+    }
+    
+    protected void postAddNewCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        category = new Category(request.getParameter("type"));
+        categoryServices.save(category);
+        response.sendRedirect("./categories");
+    }
+    
+    protected void postUpdateCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Long id = Long.parseLong(request.getParameter("id"));
+        category = new Category(request.getParameter("type"));
+        categoryServices.updateCategory(id, category);
+        response.sendRedirect("./categories");
+    }
 }

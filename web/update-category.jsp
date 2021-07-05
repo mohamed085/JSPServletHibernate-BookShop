@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Categories</title>
+        <title>Update category</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
@@ -150,8 +150,8 @@
                                         <span class="nav-title">Category</span>
                                     </a>
                                     <ul aria-expanded="true">
-                                        <li class="active"> <a href="<%=request.getContextPath()%>/categories" aria-expanded="false">All categories</a> </li>                                   
-                                        <li> <a href="<%=request.getContextPath()%>/categories?action=add">Add new category</a> </li>
+                                        <li> <a href="<%=request.getContextPath()%>/categories" aria-expanded="false">All categories</a> </li>                                   
+                                        <li class="active"> <a href=''>Add new category</a> </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -184,9 +184,14 @@
                                                         <a href="<%=request.getContextPath()%>/dashboard"><i class="ti ti-home"></i></a>
                                                     </li>
                                                     <li class="breadcrumb-item">
-                                                        Dashboard
+                                                        <a href="<%=request.getContextPath()%>/dashboard">Dashboard</a>
                                                     </li>
-                                                    <li class="breadcrumb-item active text-primary" aria-current="page">Categories</li>
+                                                    <li class="breadcrumb-item">
+                                                        <a href="<%=request.getContextPath()%>/categories">Categories</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active text-primary" aria-current="page">
+                                                        ${category.category}
+                                                    </li>
                                                 </ol>
                                             </nav>
                                         </div>
@@ -200,43 +205,30 @@
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-sm-flex justify-content-between align-items-center py-3">
                                             <div class="card-heading mb-3 mb-sm-0">
-                                                <h4 class="card-title">All Categories</h4>
-                                            </div>
-                                            <div class="dropdown">
-                                                <input type="text" class="form-control form-control-sm" placeholder="Search" />
+                                                <h4 class="card-title">Add New Category</h4>
                                             </div>
                                         </div>
-                                        <div class="card-body scrollbar scroll_dark" style="max-height: 420px;">
-                                            <div class="table-responsive m-t-20">
-                                                <table id="datatable-buttons" class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Id.</th>
-                                                            <th>Type</th>
-                                                            <th>Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="text-muted">
-                                                        <c:forEach var = "category" items="${categories}" >
-                                                            <tr>
-                                                                <td>${category.id}</td>
-                                                                <td>${category.category}</td>
-                                                                <td>
-                                                                    <a href="">Display</a> | 
-                                                                    <a href="<%=request.getContextPath()%>/categories?action=delete&id=${category.id}">Delete</a> | 
-                                                                    <a href="<%=request.getContextPath()%>/categories?action=update&id=${category.id}">Update</a>
-                                                                </td>
-                                                            </tr>
-                                                        </c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
 
-
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="card card-statistics">
+                                        <div class="card-body">
+                                            <form action="<%=request.getContextPath()%>/categories?action=update" method="post">
+                                                <div class="form-group">
+                                                    <label for="type">Category Type</label>
+                                                    <input type="hidden" value="${category.id}" name="id">
+                                                    <input type="text" value="${category.category}" name="type" class="form-control" id="type">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Update category</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- end container-fluid -->
                     </div>
@@ -257,4 +249,3 @@
     </body>
 
 </html>
-

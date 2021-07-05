@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Categories</title>
+        <title>Add new category</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
@@ -186,7 +186,10 @@
                                                     <li class="breadcrumb-item">
                                                         Dashboard
                                                     </li>
-                                                    <li class="breadcrumb-item active text-primary" aria-current="page">Categories</li>
+                                                    <li class="breadcrumb-item">
+                                                        <a href="<%=request.getContextPath()%>/categories">Categories</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active text-primary" aria-current="page">Add new category</li>
                                                 </ol>
                                             </nav>
                                         </div>

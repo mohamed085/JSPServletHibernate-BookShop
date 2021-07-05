@@ -45,4 +45,10 @@ public class CategoryServicesImp implements CategoryServices{
         Category c = findByCategoryType(object.getCategory());
         deleteById(c.getId());
     }   
+
+    @Override
+    public Category updateCategory(Long id, Category category) {
+        categoryDAO = new CategoryDAO();
+        return categoryDAO.update(id, category);
+    }
 }
