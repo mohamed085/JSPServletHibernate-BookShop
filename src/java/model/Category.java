@@ -3,6 +3,7 @@ package model;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,6 +18,8 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @Column(unique = true)
     private String category;
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", targetEntity = Product.class, cascade = CascadeType.ALL)
@@ -55,7 +58,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" + "id=" + id + ", category=" + category + ", products=" + products + '}';
+        return "Category{" + "id=" + id + ", category=" + category + '}';
     }
     
     
