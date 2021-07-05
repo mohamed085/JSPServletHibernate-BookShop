@@ -18,9 +18,11 @@ import util.NewHibernateUtil;
 
 public class NewClass {
     public static void main(String[] args) {
-        UserServices services = new UserServicesImp();
-        System.out.println(services.findByUsername("admin"));
-    
+        CategoryServices categoryServices = new CategoryServicesImp();
+        Category c = new Category("Men");
+        c.getCategories().add(new Category("Shirts"));
+        c.getCategories().add(new Category("Shirts"));
+        categoryServices.save(c);
     }
     
 }

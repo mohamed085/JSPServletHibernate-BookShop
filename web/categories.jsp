@@ -224,7 +224,9 @@
                                                                 <td>
                                                                     <a href="">Display</a> | 
                                                                     <a href="<%=request.getContextPath()%>/categories?action=delete&id=${category.id}">Delete</a> | 
-                                                                    <a href="<%=request.getContextPath()%>/categories?action=update&id=${category.id}">Update</a>
+                                                                    <a href="<%=request.getContextPath()%>/categories?action=update&id=${category.id}">Update</a> |
+                                                                    <a href="">Add sub category</a> | 
+                                                                    <a href="">Add product</a>
                                                                 </td>
                                                             </tr>
                                                         </c:forEach>

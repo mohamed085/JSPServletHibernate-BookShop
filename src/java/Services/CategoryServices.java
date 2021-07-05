@@ -1,5 +1,6 @@
 package services;
 
+import java.util.List;
 import model.Category;
 
 public interface CategoryServices extends CRUDServices<Category, Long>{
