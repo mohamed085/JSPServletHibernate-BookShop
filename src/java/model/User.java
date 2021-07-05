@@ -42,9 +42,7 @@ public class User {
         this.role = role;
     }
 
-    
-    
-    public User(Long id, String name, String username, String password, String email, String address, String role) {
+    public User(Long id, String name, String username, String password, String email, String address, String role, String avatar, String phone, String facebookURL, String twitterURL, String instagramURL) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -52,8 +50,15 @@ public class User {
         this.email = email;
         this.address = address;
         this.role = role;
+        this.avatar = avatar;
+        this.phone = phone;
+        this.facebookURL = facebookURL;
+        this.twitterURL = twitterURL;
+        this.instagramURL = instagramURL;
     }
 
+    
+    
     public Long getId() {
         return id;
     }
@@ -110,10 +115,51 @@ public class User {
         this.role = role;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getFacebookURL() {
+        return facebookURL;
+    }
+
+    public void setFacebookURL(String facebookURL) {
+        this.facebookURL = facebookURL;
+    }
+
+    public String getTwitterURL() {
+        return twitterURL;
+    }
+
+    public void setTwitterURL(String twitterURL) {
+        this.twitterURL = twitterURL;
+    }
+
+    public String getInstagramURL() {
+        return instagramURL;
+    }
+
+    public void setInstagramURL(String instagramURL) {
+        this.instagramURL = instagramURL;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + ", email=" + email + ", address=" + address + ", role=" + role + '}';
+        return "User{" + "id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + ", email=" + email + ", address=" + address + ", role=" + role + ", avatar=" + avatar + ", phone=" + phone + ", facebookURL=" + facebookURL + ", twitterURL=" + twitterURL + ", instagramURL=" + instagramURL + '}';
     }
+
     
     
 

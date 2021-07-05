@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Admin Dashboard</title>
+        <title>Admin Profile</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
@@ -56,18 +56,6 @@
                         <!-- begin navigation -->
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <div class="navigation d-flex">
-                                <ul class="navbar-nav nav-left">
-                                    <li class="nav-item dropdown">
-                                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add new 
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item nav-link" href="">Add new Category</a>
-                                            <a class="dropdown-item nav-link" href="">Add new product</a>
-                                            <a class="dropdown-item nav-link" href="">Add new offer</a>
-                                        </div>
-                                    </li>
-                                </ul>
                                 <ul class="navbar-nav nav-right ml-auto">
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -348,18 +336,18 @@
                         <div class="sidebar-nav scrollbar scroll_light">
                             <ul class="metismenu " id="sidebarNav">
                                 <li>
-                                    <a aria-expanded="false">
+                                    <a aria-expanded="false" href="<%=request.getContextPath()%>/dashboard">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Dashboard</span>
                                     </a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a aria-expanded="false">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Profile Page</span>
                                     </a>
                                 </li>
-                                <li  class="active">
+                                <li>
                                     <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Category</span>
@@ -399,11 +387,8 @@
                                         <nav>
                                             <ol class="breadcrumb p-0 m-b-0">
                                                 <li class="breadcrumb-item">
-                                                    <a href="index.html"><i class="ti ti-home"></i></a>
-                                                </li>
-                                                <li class="breadcrumb-item">
-                                                    Pages
-                                                </li>
+                                                    <a href="<%=request.getContextPath()%>/dashboard"><i class="ti ti-home"></i></a>
+                                                </li>   
                                                 <li class="breadcrumb-item active text-primary" aria-current="page">Account Settings</li>
                                             </ol>
                                         </nav>
@@ -428,9 +413,12 @@
                                                                 <img src="adminAssets/img/avtar/01.jpg" class="img-fluid" alt="users-avatar">
                                                             </div>
                                                             <div class="profile pt-4">
-                                                                <h4 class="mb-1">${user.username}</h4>
-                                                                <p>Admin</p>
+                                                                <h4 class="mb-1">${user.name}</h4>
                                                             </div>
+                                                            <div class="profile-btn text-center">
+                                                                <div><button class="btn btn-light text-primary mb-2">Upload New Avatar</button></div>
+                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -446,6 +434,10 @@
                                                                 <div class="form-group col-md-12">
                                                                     <label for="name1">Full Name</label>
                                                                     <input type="text" class="form-control" id="name1" value="${user.name}">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="name1">Username</label>
+                                                                    <input type="text" class="form-control" id="name1" value="${user.username}">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="phone1">Phone Number</label>
@@ -486,16 +478,16 @@
                                                         <form>
                                                             <div class="form-group">
                                                                 <label for="fb">Facebook URL:</label>
-                                                                <input type="text" class="form-control" id="fb" value="https://www.facebook.com/">
+                                                                <input type="text" class="form-control" id="fb" value="${user.facebookURL}">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="tr">Twitter URL:</label>
-                                                                <input type="text" class="form-control" id="tr" value="https://twitter.com/">
+                                                                <input type="text" class="form-control" id="tr" value="${user.twitterURL}">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label for="br">Instagram URL:</label>
-                                                                <input type="text" class="form-control" id="br" value="https://www.blogger.com/">
+                                                                <input type="text" class="form-control" id="br" value="${user.instagramURL}">
                                                             </div>
                                                            <button type="submit" class="btn btn-primary">Save & Update</button>
                                                         </form>

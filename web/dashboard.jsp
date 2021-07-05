@@ -4,6 +4,8 @@
     Author     : Mohamed
 --%>
 
+<%@page import="model.Category"%>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -342,7 +344,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a aria-expanded="false">
+                                    <a aria-expanded="false" href="<%=request.getContextPath()%>/login?action=profile">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Profile Page</span>
                                     </a>
@@ -351,12 +353,10 @@
                                     <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Category</span>
-                                        <span class="nav-label label label-danger">9</span>
                                     </a>
                                     <ul aria-expanded="false">
-                                        <li> <a href="">All categories</a> </li>                                   
-                                        <li> <a href='index-crm.html'>Add new category</a> </li>
-
+                                        <li> <a href=''>All categories</a> </li>                                   
+                                        <li> <a href=''>Add new category</a> </li>
                                     </ul>
                                 </li>
                                 <li>

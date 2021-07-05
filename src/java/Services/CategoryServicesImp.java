@@ -34,18 +34,15 @@ public class CategoryServicesImp implements CategoryServices{
     }
 
     @Override
-    public void delete(Category object) {
-        categoryDAO = new CategoryDAO();
-        Category c = findByCategoryType(object.getCategory());
-        categoryDAO.deleteById(c.getId());
-    }
-
-    @Override
     public void deleteById(Long id) {
         categoryDAO = new CategoryDAO();
         categoryDAO.delete(id);
     }
 
-    
-    
+    @Override
+    public void delete(Category object) {
+        categoryDAO = new CategoryDAO();
+        Category c = findByCategoryType(object.getCategory());
+        deleteById(c.getId());
+    }   
 }

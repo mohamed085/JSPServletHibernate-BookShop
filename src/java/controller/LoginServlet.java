@@ -21,7 +21,8 @@ public class LoginServlet extends HttpServlet {
     User user;
     UserServices userServices;
     HttpSession session;
-    RequestDispatcher dispatcher;    
+    RequestDispatcher dispatcher;
+    String action;
 
     @Override
     public void init() throws ServletException {
@@ -32,9 +33,8 @@ public class LoginServlet extends HttpServlet {
     
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String action = request.getParameter("action");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        action = request.getParameter("action");
         if (action == null) {
             login(request, response);
         } else if (action.equalsIgnoreCase("logout")) {
@@ -45,8 +45,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         username = request.getParameter("username");
         password = request.getParameter("password");
@@ -56,7 +55,7 @@ public class LoginServlet extends HttpServlet {
         user = userServices.login(username, password);
         if (user != null) {
             session = request.getSession();
-            session.setAttribute("username", username);
+            session.setAttribute("username", user.getUsername());
             if (user.getRole().equalsIgnoreCase("customer")) {  
                 response.sendRedirect("index.jsp");
             } else if (user.getRole().equalsIgnoreCase("admin")) {
@@ -69,23 +68,19 @@ public class LoginServlet extends HttpServlet {
         }
     }
     
-    protected void login(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             dispatcher = request.getRequestDispatcher("auth-login.jsp");  
             dispatcher.forward(request, response);
     }
     
-    protected void logout(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             session.removeAttribute("username");
             response.sendRedirect("auth-login.jsp");
     }
     
-    protected void profile(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String username = session.getAttribute("username").toString();
-        user = userServices.findByUsername(username);
-        request.setAttribute("user", user);
+    protected void profile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        username = (String) session.getAttribute("username");
+        request.setAttribute("user", userServices.findByUsername(username));
         dispatcher = request.getRequestDispatcher("page-account-settings.jsp");  
         dispatcher.forward(request, response);
     }    
