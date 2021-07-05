@@ -46,7 +46,9 @@ public class CategoryServlet extends HttpServlet {
         } else {
             action = request.getParameter("action");
             if (action == null) {
-                doGetList(request, response);
+                allCategories(request, response);
+            } else if (action.equalsIgnoreCase("add")) {
+                addCategory(request, response);
             }
         }
     }
@@ -55,11 +57,16 @@ public class CategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
     
-    protected void doGetList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void allCategories(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("categories", categoryServices.findAll());
         dispatcher = request.getRequestDispatcher("categories.jsp");  
         dispatcher.forward(request, response);
 
+    }
+    
+    protected void addCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        dispatcher = request.getRequestDispatcher("add-new-category.jsp");  
+        dispatcher.forward(request, response);
     }
 
 }

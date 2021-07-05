@@ -150,8 +150,8 @@
                                         <span class="nav-title">Category</span>
                                     </a>
                                     <ul aria-expanded="true">
-                                        <li class="active"> <a href="<%=request.getContextPath()%>/categories" aria-expanded="false">All categories</a> </li>                                   
-                                        <li> <a href="<%=request.getContextPath()%>/categories?action=add">Add new category</a> </li>
+                                        <li> <a href="<%=request.getContextPath()%>/categories" aria-expanded="false">All categories</a> </li>                                   
+                                        <li class="active"> <a href=''>Add new category</a> </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -200,39 +200,29 @@
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-sm-flex justify-content-between align-items-center py-3">
                                             <div class="card-heading mb-3 mb-sm-0">
-                                                <h4 class="card-title">All Categories</h4>
-                                            </div>
-                                            <div class="dropdown">
-                                                <input type="text" class="form-control form-control-sm" placeholder="Search" />
+                                                <h4 class="card-title">Add New Category</h4>
                                             </div>
                                         </div>
-                                        <div class="card-body scrollbar scroll_dark" style="max-height: 420px;">
-                                            <div class="table-responsive m-t-20">
-                                                <table id="datatable-buttons" class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Id.</th>
-                                                            <th>Type</th>
-                                                            <th>Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="text-muted">
-                                                        <c:forEach var = "category" items="${categories}" >
-                                                            <tr>
-                                                                <td>${category.id}</td>
-                                                                <td>${category.category}</td>
-                                                                <td><a href="">Display</a> | <a href="">Delete</a> | <a href="">Update</a></td>
-                                                            </tr>
-                                                        </c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
 
-
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="card card-statistics">
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Category Type</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category Type">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Add new category</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- end container-fluid -->
                     </div>
@@ -253,4 +243,3 @@
     </body>
 
 </html>
-
