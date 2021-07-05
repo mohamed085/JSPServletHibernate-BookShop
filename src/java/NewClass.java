@@ -1,4 +1,6 @@
 
+import model.Category;
+import model.Product;
 import services.UserServices;
 import services.UserServicesImp;
 import model.User;
@@ -10,11 +12,18 @@ import util.NewHibernateUtil;
 
 public class NewClass {
     public static void main(String[] args) {
-        UserServices userServices = new UserServicesImp();
-        
-        User user = userServices.login("mohamed085", "MO0420");
-        System.out.println(user.toString());
-        NewHibernateUtil.getSessionFactory().close();
+        Category category = new Category("Books");
+        Product product = new Product("book2", 10, "description", 10, category);
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            category.getProducts().add(product);
+            session.save(product);
+            session.getTransaction().commit();
+        } catch (HibernateException e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+        }
     }
     
 }
