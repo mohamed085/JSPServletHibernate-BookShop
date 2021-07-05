@@ -1,6 +1,6 @@
 
-import Services.UserServices;
-import Services.UserServicesImp;
+import services.UserServices;
+import services.UserServicesImp;
 import model.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

@@ -45,7 +45,7 @@
                                     <div class="d-flex align-items-center h-100-vh">
                                         <div class="login p-50">
                                             <h1 class="mb-2">We Are Mentor</h1>
-                                            <p>Welcome back, please login to your account.</p>
+                                            <p>${err}.</p>
                                             <form action="<%=request.getContextPath()%>/login" method="post" class="mt-3 mt-sm-5">
                                                 <div class="row">
                                                     <div class="col-12">

@@ -33,7 +33,11 @@ public class UserDAO {
             q.setString(0, username);
             List<User> users = q.list(); 
             session.getTransaction().commit();
-            return users.get(0);
+            if (users.isEmpty()) {
+                return null;
+            } else {
+                return users.get(0);
+            }
         } catch (HibernateException e) {
             session.getTransaction().rollback();
             e.printStackTrace();

@@ -1,9 +1,8 @@
 package controller;
 
-import Services.UserServices;
-import Services.UserServicesImp;
+import services.UserServices;
+import services.UserServicesImp;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.User;
 
+
 @WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
 
@@ -21,14 +21,7 @@ public class LoginServlet extends HttpServlet {
     User user;
     UserServices userServices;
     HttpSession session;
-    RequestDispatcher dispatcher;
-    
-    @Override
-    public void init() throws ServletException {
-        userServices = new UserServicesImp();
-    }
-
-    
+    RequestDispatcher dispatcher;    
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,17 +33,20 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         username = request.getParameter("username");
         password = request.getParameter("password");
+        
+        userServices = new UserServicesImp();
         
         user = userServices.login(username, password);
         if (user != null) {
             session = request.getSession();
             session.setAttribute("username", username);
             if (user.getRole().equalsIgnoreCase("customer")) {  
-                response.sendRedirect("/");
+                response.sendRedirect("index.jsp");
             } else if (user.getRole().equalsIgnoreCase("admin")) {
-               response.sendRedirect("/dashboard");
+               response.sendRedirect("index.html");
             }
         } else {
             request.setAttribute("err", "Invalid username or password");
