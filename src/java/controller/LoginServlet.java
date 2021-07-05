@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
             if (user.getRole().equalsIgnoreCase("customer")) {  
                 response.sendRedirect("index.jsp");
             } else if (user.getRole().equalsIgnoreCase("admin")) {
-               response.sendRedirect("index.html");
+               response.sendRedirect("./dashboard");
             }
         } else {
             request.setAttribute("err", "Invalid username or password");
