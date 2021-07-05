@@ -9,19 +9,15 @@
 <html>
 
     <head>
-        <title>Mentor - Bootstrap 4 Admin Dashboard Template</title>
+        <title>Login</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
         <meta name="author" content="Potenza Global Solutions" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <!-- app favicon -->
         <link rel="shortcut icon" href="assets/img/favicon.ico">
-        <!-- google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-        <!-- plugin stylesheets -->
         <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
-        <!-- app style -->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     </head>
 
@@ -50,7 +46,7 @@
                                         <div class="login p-50">
                                             <h1 class="mb-2">We Are Mentor</h1>
                                             <p>Welcome back, please login to your account.</p>
-                                            <form action="<%=request.getContextPath()%>/auth-login" method="post" class="mt-3 mt-sm-5">
+                                            <form action="<%=request.getContextPath()%>/login" method="post" class="mt-3 mt-sm-5">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group">
