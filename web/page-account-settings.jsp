@@ -347,12 +347,29 @@
                         <!-- begin sidebar-nav -->
                         <div class="sidebar-nav scrollbar scroll_light">
                             <ul class="metismenu " id="sidebarNav">
-                                <li class="active">
+                                <li>
                                     <a aria-expanded="false">
                                         <i class="nav-icon ti ti-rocket"></i>
-                                        <span class="nav-title">Dashboards</span>
+                                        <span class="nav-title">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a aria-expanded="false">
+                                        <i class="nav-icon ti ti-rocket"></i>
+                                        <span class="nav-title">Profile Page</span>
+                                    </a>
+                                </li>
+                                <li  class="active">
+                                    <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                        <i class="nav-icon ti ti-rocket"></i>
+                                        <span class="nav-title">Category</span>
                                         <span class="nav-label label label-danger">9</span>
                                     </a>
+                                    <ul aria-expanded="false">
+                                        <li> <a href="">All categories</a> </li>                                   
+                                        <li> <a href='index-crm.html'>Add new category</a> </li>
+
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="app-chat.html" aria-expanded="false">

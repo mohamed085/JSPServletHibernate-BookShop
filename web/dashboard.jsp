@@ -56,18 +56,7 @@
                         <!-- begin navigation -->
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <div class="navigation d-flex">
-                                <ul class="navbar-nav nav-left">
-                                    <li class="nav-item dropdown">
-                                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add new 
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item nav-link" href="">Add new Category</a>
-                                            <a class="dropdown-item nav-link" href="">Add new product</a>
-                                            <a class="dropdown-item nav-link" href="">Add new offer</a>
-                                        </div>
-                                    </li>
-                                </ul>
+                                
                                 <ul class="navbar-nav nav-right ml-auto">
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -296,7 +285,6 @@
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="mr-1">
                                                         <h4 class="text-white mb-0">${sessionScope.username}</h4>
-                                                        <small class="text-white">Henry@example.com</small>
                                                     </div>
                                                         <a href="<%=request.getContextPath()%>/login?action=logout" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
                                                                     class="zmdi zmdi-power"></i></a>
@@ -350,9 +338,26 @@
                                 <li class="active">
                                     <a aria-expanded="false">
                                         <i class="nav-icon ti ti-rocket"></i>
-                                        <span class="nav-title">Dashboards</span>
+                                        <span class="nav-title">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a aria-expanded="false">
+                                        <i class="nav-icon ti ti-rocket"></i>
+                                        <span class="nav-title">Profile Page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                        <i class="nav-icon ti ti-rocket"></i>
+                                        <span class="nav-title">Category</span>
                                         <span class="nav-label label label-danger">9</span>
                                     </a>
+                                    <ul aria-expanded="false">
+                                        <li> <a href="">All categories</a> </li>                                   
+                                        <li> <a href='index-crm.html'>Add new category</a> </li>
+
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="app-chat.html" aria-expanded="false">
