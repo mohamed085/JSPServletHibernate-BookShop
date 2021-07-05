@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Mentor - Bootstrap 4 Admin Dashboard Template</title>
+        <title>Admin Dashboard</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
@@ -295,15 +295,15 @@
                                             <div class="bg-gradient px-4 py-3">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="mr-1">
-                                                        <h4 class="text-white mb-0">Alice Williams</h4>
+                                                        <h4 class="text-white mb-0">${sessionScope.username}</h4>
                                                         <small class="text-white">Henry@example.com</small>
                                                     </div>
-                                                    <a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
+                                                        <a href="<%=request.getContextPath()%>/login?action=logout" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
                                                                     class="zmdi zmdi-power"></i></a>
                                                 </div>
                                             </div>
                                             <div class="p-4">
-                                                <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
+                                                <a class="dropdown-item d-flex nav-link" href="<%=request.getContextPath()%>/login?action=profile">
                                                     <i class="fa fa-user pr-2 text-success"></i> Profile</a>
                                                 <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
                                                     <i class="fa fa-envelope pr-2 text-primary"></i> Inbox

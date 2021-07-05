@@ -26,8 +26,13 @@ public class DashboardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        dispatcher = request.getRequestDispatcher("dashboard.jsp");  
-        dispatcher.forward(request, response);
+        String username = (String) request.getSession().getAttribute("username");
+        if (username == null) {
+            response.sendRedirect("page-404.jsp");            
+        } else {
+            response.sendRedirect("dashboard.jsp");
+        }
+        
     }
 
 

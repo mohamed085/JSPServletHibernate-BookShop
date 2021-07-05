@@ -22,12 +22,26 @@ public class LoginServlet extends HttpServlet {
     UserServices userServices;
     HttpSession session;
     RequestDispatcher dispatcher;    
+
+    @Override
+    public void init() throws ServletException {
+        super.init(); 
+        userServices = new UserServicesImp();
+    }
+    
+    
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            dispatcher = request.getRequestDispatcher("auth-login.jsp");  
-            dispatcher.forward(request, response);
+        String action = request.getParameter("action");
+        if (action == null) {
+            login(request, response);
+        } else if (action.equalsIgnoreCase("logout")) {
+            logout(request, response);
+        } else if (action.equalsIgnoreCase("profile")) {
+            profile(request, response);
+        }
     }
 
     @Override
@@ -53,5 +67,26 @@ public class LoginServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("auth-login.jsp");  
             dispatcher.forward(request, response);
         }
+    }
+    
+    protected void login(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            dispatcher = request.getRequestDispatcher("auth-login.jsp");  
+            dispatcher.forward(request, response);
+    }
+    
+    protected void logout(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            session.removeAttribute("username");
+            response.sendRedirect("auth-login.jsp");
+    }
+    
+    protected void profile(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String username = session.getAttribute("username").toString();
+        user = userServices.findByUsername(username);
+        request.setAttribute("user", user);
+        response.sendRedirect("page-account-settings.jsp");
+
     }
 }
