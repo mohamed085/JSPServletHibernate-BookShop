@@ -25,6 +25,11 @@ public class User {
     private String email;    
     private String address;
     private String role;
+    private String avatar;
+    private String phone;
+    private String facebookURL;
+    private String twitterURL;
+    private String instagramURL;
 
     public User() {
     }

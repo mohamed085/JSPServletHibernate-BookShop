@@ -86,7 +86,7 @@ public class LoginServlet extends HttpServlet {
         String username = session.getAttribute("username").toString();
         user = userServices.findByUsername(username);
         request.setAttribute("user", user);
-        response.sendRedirect("page-account-settings.jsp");
-
-    }
+        dispatcher = request.getRequestDispatcher("page-account-settings.jsp");  
+        dispatcher.forward(request, response);
+    }    
 }

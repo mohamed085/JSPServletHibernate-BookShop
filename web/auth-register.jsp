@@ -45,6 +45,7 @@
                                         <div class="register p-5">
                                             <h1 class="mb-2">We are Mentor</h1>
                                             <p>Welcome, Please create your account.</p>
+                                            <p>${err}</p>
                                             <form action="<%=request.getContextPath()%>/register" method="post" class="mt-2 mt-sm-5">
                                                 <div class="row">
                                                     <div class="col-12">

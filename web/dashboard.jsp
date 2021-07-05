@@ -43,8 +43,8 @@
 
                         <!-- begin navbar-header -->
                         <div class="navbar-header d-flex align-items-center">
-                            <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
-                            <a class="navbar-brand" href="index.html">
+                            <a href="<%=request.getContextPath()%>/dashboard" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
+                            <a class="navbar-brand" href="<%=request.getContextPath()%>/dashboard">
                                 <img src="adminAssets/img/logo.png" class="img-fluid logo-desktop" alt="logo" />
                                 <img src="adminAssets/img/logo-icon.png" class="img-fluid logo-mobile" alt="logo" />
                             </a>
@@ -58,13 +58,13 @@
                             <div class="navigation d-flex">
                                 <ul class="navbar-nav nav-left">
                                     <li class="nav-item dropdown">
-                                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop Down
+                                        <a href="javascript:void(0)" class="nav-link " id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add new 
                                             <i class="fa fa-angle-down"></i>
                                         </a>
                                         <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item nav-link" href="javascript:void(0)">Action</a>
-                                            <a class="dropdown-item nav-link" href="javascript:void(0)">Another action</a>
-                                            <a class="dropdown-item nav-link" href="javascript:void(0)">Something else here</a>
+                                            <a class="dropdown-item nav-link" href="">Add new Category</a>
+                                            <a class="dropdown-item nav-link" href="">Add new product</a>
+                                            <a class="dropdown-item nav-link" href="">Add new offer</a>
                                         </div>
                                     </li>
                                 </ul>
