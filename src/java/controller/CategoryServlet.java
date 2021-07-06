@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
 import java.io.IOException;
@@ -20,10 +16,7 @@ import services.CategoryServicesImp;
 import services.ProductServices;
 import services.ProductServicesImp;
 
-/**
- *
- * @author Mohamed
- */
+
 @WebServlet(name = "CategoryServlet", urlPatterns = {"/categories"})
 public class CategoryServlet extends HttpServlet {
     
