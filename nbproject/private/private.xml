@@ -4,11 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Materials/Java/JSP%20and%20Servlet/Projects/ECommerce/src/java/controller/ProductServlet.java</file>
-            <file>file:/E:/Materials/Java/JSP%20and%20Servlet/Projects/ECommerce/web/products.jsp</file>
-            <file>file:/E:/Materials/Java/JSP%20and%20Servlet/Projects/ECommerce/web/update-product.jsp</file>
-            <file>file:/E:/Materials/Java/JSP%20and%20Servlet/Projects/ECommerce/src/java/DAO/ProductDAO.java</file>
-            <file>file:/E:/Materials/Java/JSP%20and%20Servlet/Projects/ECommerce/src/java/controller/CategoryServlet.java</file>
-            <file>file:/E:/Materials/Java/JSP%20and%20Servlet/Projects/ECommerce/web/dashboard.jsp</file>
+            <file>file:/E:/Materials/Java/JSP%20and%20Servlet/Projects/ECommerce/src/java/model/Product.java</file>
         </group>
     </open-files>
 </project-private>

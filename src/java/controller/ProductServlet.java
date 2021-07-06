@@ -22,6 +22,7 @@ import services.CategoryServices;
 import services.CategoryServicesImp;
 import services.ProductServices;
 import services.ProductServicesImp;
+import util.UploadPhoto;
 
 
 @WebServlet(name = "ProductServlet", urlPatterns = {"/products"})
@@ -112,6 +113,7 @@ public class ProductServlet extends HttpServlet {
                 Integer.parseInt(request.getParameter("quantity")),
                 request.getParameter("description"),
                 Double.parseDouble(request.getParameter("price")),
+                UploadPhoto.uploadFile(request, "img/"),
                 request.getParameter("publisher"),
                 request.getParameter("publishDate"),
                 Integer.parseInt(request.getParameter("pages")),
