@@ -97,14 +97,11 @@
             </div>
             <!-- end app-wrap -->
         </div>
-        <!-- end app -->
 
 
 
-        <!-- plugins -->
         <script src="adminAssets/js/vendors.js"></script>
 
-        <!-- custom app -->
         <script src="adminAssets/js/app.js"></script>
     </body>
 

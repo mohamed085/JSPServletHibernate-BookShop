@@ -72,7 +72,6 @@ public class CategoryServlet extends HttpServlet {
         request.setAttribute("categories", categoryServices.findAll());
         dispatcher = request.getRequestDispatcher("categories.jsp");  
         dispatcher.forward(request, response);
-
     }
     
     protected void getAddNewCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

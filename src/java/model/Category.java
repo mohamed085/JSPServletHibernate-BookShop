@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
@@ -21,7 +23,7 @@ public class Category {
     
     @Column(unique = true)
     private String category;
-    
+        
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", targetEntity = Product.class, cascade = CascadeType.ALL)
     private Set<Product> products = new HashSet<Product>(); 
 

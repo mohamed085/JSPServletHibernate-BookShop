@@ -28,6 +28,15 @@ public class Product {
     public Product() {
     }
 
+    public Product(String name, int quantity, String description, double price) {
+        this.name = name;
+        this.quantity = quantity;
+        this.description = description;
+        this.price = price;
+    }
+
+    
+    
     public Product(String name, int quantity, String description, double price, Category category) {
         this.name = name;
         this.quantity = quantity;
@@ -94,7 +103,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", quantity=" + quantity + ", description=" + description + ", price=" + price + ", photos=" + photos + ", category=" + category + '}';
+        return "Product{" + "id=" + id + ", name=" + name + ", quantity=" + quantity + ", description=" + description + ", price=" + price + ", photos=" + photos + ", category=" + category.getCategory() + '}';
     }
     
     
