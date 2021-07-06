@@ -59,6 +59,10 @@ public class ProductServlet extends HttpServlet {
                 getAllProduct(request, response);
             } else if (action.equalsIgnoreCase("add")) {
                 getAddNewProduct(request, response);
+            } else if (action.equalsIgnoreCase("delete")) {
+                getDeleteProduct(request, response);
+            } else if (action.equalsIgnoreCase("update")) {
+                getUpdateProducct(request, response);
             }
         }
     }
@@ -87,7 +91,21 @@ public class ProductServlet extends HttpServlet {
         dispatcher = request.getRequestDispatcher("add-new-product.jsp");  
         dispatcher.forward(request, response);
     }
-
+    
+    protected void getDeleteProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Long id = Long.parseLong(request.getParameter("id"));
+        productServices.deleteById(id);
+        response.sendRedirect("./products");
+    }
+    
+    protected void getUpdateProducct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Long id = Long.parseLong(request.getParameter("id"));
+        request.setAttribute("product", productServices.findById(id));
+        request.setAttribute("categories", categoryServices.findAll());
+        dispatcher = request.getRequestDispatcher("update-product.jsp");  
+        dispatcher.forward(request, response);
+    }
+    
     protected void postAddNewProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ParseException {
         product = new Product(
                 request.getParameter("name"),

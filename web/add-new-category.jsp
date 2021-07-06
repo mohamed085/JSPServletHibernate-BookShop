@@ -181,7 +181,7 @@
                         <!-- begin container-fluid -->
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-12 m-b-30">
+                                <div class="col-12">
                                     <!-- begin page title -->
                                     <div class="d-block d-lg-flex flex-nowrap align-items-center">
                                         <div class="page-title mr-4 pr-4 border-right">
@@ -209,7 +209,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-xxl-6 m-b-30">
+                                <div class="col-xxl-12 m-b-30">
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-sm-flex justify-content-between align-items-center py-3">
                                             <div class="card-heading mb-3 mb-sm-0">

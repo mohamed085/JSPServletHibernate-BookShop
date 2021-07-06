@@ -209,7 +209,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-xxl-6 m-b-30">
+                                <div class="col-xxl-12 m-b-30">
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-sm-flex justify-content-between align-items-center py-3">
                                             <div class="card-heading mb-3 mb-sm-0">

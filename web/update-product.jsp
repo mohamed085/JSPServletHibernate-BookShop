@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Update category</title>
+        <title>Update ${product.name}</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
@@ -144,24 +144,24 @@
                                         <span class="nav-title">Profile Page</span>
                                     </a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a class="has-arrow" aria-expanded="true">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Category</span>
                                     </a>
                                     <ul aria-expanded="true">
                                         <li> <a href="<%=request.getContextPath()%>/categories" aria-expanded="false">All categories</a> </li>                                   
-                                        <li class="active"> <a href=''>Add new category</a> </li>
+                                        <li> <a href="<%=request.getContextPath()%>/categories?action=add">Add new category</a> </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a class="has-arrow" aria-expanded="true">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Products</span>
                                     </a>
                                     <ul aria-expanded="true">
                                         <li> <a href="<%=request.getContextPath()%>/products" aria-expanded="false">All products</a> </li>                                   
-                                        <li> <a href="<%=request.getContextPath()%>/products?action=add">Add new product</a> </li>
+                                        <li class="active"> <a href="<%=request.getContextPath()%>/products?action=add">Add new product</a> </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -194,14 +194,12 @@
                                                         <a href="<%=request.getContextPath()%>/dashboard"><i class="ti ti-home"></i></a>
                                                     </li>
                                                     <li class="breadcrumb-item">
-                                                        <a href="<%=request.getContextPath()%>/dashboard">Dashboard</a>
+                                                        Dashboard
                                                     </li>
                                                     <li class="breadcrumb-item">
-                                                        <a href="<%=request.getContextPath()%>/categories">Categories</a>
+                                                        <a href="<%=request.getContextPath()%>/products">Products</a>
                                                     </li>
-                                                    <li class="breadcrumb-item active text-primary" aria-current="page">
-                                                        ${category.category}
-                                                    </li>
+                                                    <li class="breadcrumb-item active text-primary" aria-current="page">Update: ${product.name}</li>
                                                 </ol>
                                             </nav>
                                         </div>
@@ -215,7 +213,7 @@
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-sm-flex justify-content-between align-items-center py-3">
                                             <div class="card-heading mb-3 mb-sm-0">
-                                                <h4 class="card-title">Add New Category</h4>
+                                                <h4 class="card-title">Update: ${product.name}</h4>
                                             </div>
                                         </div>
                                         
@@ -227,13 +225,60 @@
                                 <div class="col-xl-12">
                                     <div class="card card-statistics">
                                         <div class="card-body">
-                                            <form action="<%=request.getContextPath()%>/categories?action=update" method="post">
+                                            <form action="<%=request.getContextPath()%>/products?action=add" method="post">
                                                 <div class="form-group">
-                                                    <label for="type">Category Type</label>
-                                                    <input type="hidden" value="${category.id}" name="id">
-                                                    <input type="text" value="${category.category}" name="type" class="form-control" id="type">
+                                                    <label>Product name</label>
+                                                    <input type="text" name="name" class="form-control" value="${product.name}">
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Update category</button>
+                                                <div class="form-group">
+                                                    <label>Select product category</label>
+                                                    <select class="form-control" name="category_Id" >
+                                                        <c:forEach var = "category" items="${categories}" >
+                                                            <option value="${category.id}">${category.category}</option>
+                                                        </c:forEach>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product quantity</label>
+                                                    <input type="text" name="quantity" class="form-control" value="${product.name}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product description</label>
+                                                    <input type="text" name="description" class="form-control" value="${product.description}"> 
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product price</label>
+                                                    <input type="number" name="price" class="form-control" value="${product.price}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product pages</label>
+                                                    <input type="text" name="pages" class="form-control" value="${product.pages}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product publisher</label>
+                                                    <input type="text" name="publisher" class="form-control" value="${product.publisher}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product publish date</label>
+                                                    <input type="date" name="publishDate" class="form-control" value="${product.publishDate}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product language</label>
+                                                    <input type="text" name="language" class="form-control" value="${product.language}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product EAN-UPC</label>
+                                                    <input type="text" name="EANUPC" class="form-control" value="${product.EANUPC}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product type</label>
+                                                    <input type="text" name="type" class="form-control" value="${product.type}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Product photos</label>
+                                                    <input type="file" name="photos" class="form-control">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Add new product</button>
                                             </form>
                                         </div>
                                     </div>

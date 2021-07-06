@@ -215,7 +215,7 @@
                                 <div class="col-sm-12">
                                     <div class="card card-statistics">
                                         <div class="row no-gutters">
-                                            <div class="col-xxl-3 col-lg-6">
+                                            <div class="col-xxl-6 col-lg-6">
                                                 <div class="p-20 border-lg-right border-bottom border-xxl-bottom-0">
                                                     <div class="d-flex m-b-10">
                                                         <p class="mb-0 font-regular text-muted font-weight-bold">Total Visits</p>
@@ -232,7 +232,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-3 col-lg-6">
+                                            <div class="col-xxl-6 col-lg-6">
                                                 <div class="p-20 border-xxl-right border-bottom border-xxl-bottom-0">
                                                     <div class="d-flex m-b-10">
                                                         <p class="mb-0 font-regular text-muted font-weight-bold">Total Cost</p>
@@ -249,7 +249,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-3 col-lg-6">
+                                            <div class="col-xxl-6 col-lg-6">
                                                 <div class="p-20 border-lg-right border-bottom border-lg-bottom-0">
                                                     <div class="d-flex m-b-10">
                                                         <p class="mb-0 font-regular text-muted font-weight-bold">Total Sales</p>
@@ -266,7 +266,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xxl-3 col-lg-6">
+                                            <div class="col-xxl-6 col-lg-6">
                                                 <div class="p-20">
                                                     <div class="d-block d-sm-flex h-100 align-items-center">
                                                         <div class="apexchart-wrapper">
@@ -289,7 +289,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-xxl-8 m-b-30">
+                                <div class="col-xxl-12 m-b-30">
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-flex align-items-center justify-content-between">
                                             <div class="card-heading">
@@ -800,7 +800,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-xxl-6 m-b-30">
+                                <div class="col-xxl-12 m-b-30">
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-sm-flex justify-content-between align-items-center py-3">
                                             <div class="card-heading mb-3 mb-sm-0">

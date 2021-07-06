@@ -108,7 +108,7 @@ public class ProductDAO {
         session = NewHibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
-            Query q = session.createQuery("update from Product set name = ? where id = ?");
+            Query q = session.createQuery("update from Product  where id = ?");
             q.setString(0, p.getName());
             q.setLong(1, id);
             int result = q.executeUpdate(); 

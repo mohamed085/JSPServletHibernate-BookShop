@@ -206,28 +206,28 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-xxl-6 m-b-30">
+                                <div class="col-xxl-12 m-b-30">
                                     <div class="card card-statistics h-100 mb-0">
                                         <div class="card-header d-sm-flex justify-content-between align-items-center py-3">
                                             <div class="card-heading mb-3 mb-sm-0">
-                                                <h4 class="card-title">All Categories</h4>
+                                                <h4 class="card-title">All Products</h4>
                                             </div>
                                             <div class="dropdown">
                                                 <input type="text" class="form-control form-control-sm" placeholder="Search" />
                                             </div>
                                         </div>
-                                        <div class="card-body scrollbar scroll_dark" style="max-height: 420px;">
+                                        <div class="card-body scrollbar scroll_dark">
                                             <div class="table-responsive m-t-20">
                                                 <table id="datatable-buttons" class="table">
                                                     <thead>
                                                         <tr>
                                                             <th>Id.</th>
                                                             <th>Name</th>
+                                                            <th>Photo</th>
                                                             <th>Description</th>
                                                             <th>Price</th>
                                                             <th>Quantity</th>
                                                             <th>Category</th>
-                                                            <th>Photo</th>
                                                             <th>Publisher</th>
                                                             <th>Publish date</th>
                                                             <th>Pages</th>
@@ -242,13 +242,13 @@
                                                             <tr>
                                                                 <td>${product.id}</td>
                                                                 <td>${product.name}</td>
+                                                                <td>
+                                                                    <img src="img/${product.photos}" width="80" height="100">
+                                                                </td>
                                                                 <td>${product.description}</td>
                                                                 <td>${product.price}</td>
                                                                 <td>${product.quantity}</td>
                                                                 <td>${product.category.category}</td>
-                                                                <td>
-                                                                    <img src="img/${product.photos}" width="80" height="80">
-                                                                </td>
                                                                 <td>${product.publisher}</td>
                                                                 <td>${product.publishDate}</td>
                                                                 <td>${product.pages}</td>
@@ -257,7 +257,7 @@
                                                                 <td>${product.type}</td>
                                                                 
                                                                 <td>
-                                                                    <a href="">Display</a> | 
+                                                                    <a href="<%=request.getContextPath()%>/products?action=display&id=${product.id}">Display</a> | 
                                                                     <a href="<%=request.getContextPath()%>/products?action=delete&id=${product.id}">Delete</a> | 
                                                                     <a href="<%=request.getContextPath()%>/products?action=update&id=${product.id}">Update</a>                                                                </td>
                                                             </tr>
