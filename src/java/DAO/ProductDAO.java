@@ -14,6 +14,7 @@ public class ProductDAO {
     Product product;
     Session session;
     CategoryServices categoryServices;
+    
     public Product addProduct(Product p, Long id) {
         categoryServices = new CategoryServicesImp();
         session = NewHibernateUtil.getSessionFactory().openSession();
@@ -123,5 +124,25 @@ public class ProductDAO {
             e.printStackTrace();
             return null;
         }   
+    }
+    
+    public List<Product> findByCategoryId(Long category_Id) {
+        session = NewHibernateUtil.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            Query q = session.createQuery("from Product where category_Id=?");
+            q.setLong(0, category_Id);
+            List<Product> products = q.list(); 
+            session.getTransaction().commit();
+            if (products.isEmpty()) {
+                return null;
+            } else {
+                return products;
+            }
+        } catch (HibernateException e) {
+            session.getTransaction().rollback();
+            e.printStackTrace();
+            return null;
+        }
     }
 }

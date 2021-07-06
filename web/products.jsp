@@ -154,7 +154,7 @@
                                         <li> <a href="<%=request.getContextPath()%>/categories?action=add">Add new category</a> </li>
                                     </ul>
                                 </li>
-                                <li  class="active">
+                                <li class="active">
                                     <a class="has-arrow" aria-expanded="true">
                                         <i class="nav-icon ti ti-rocket"></i>
                                         <span class="nav-title">Products</span>

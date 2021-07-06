@@ -1,12 +1,13 @@
 
 import DAO.ProductDAO;
 import model.Product;
+import services.ProductServices;
+import services.ProductServicesImp;
 
 public class NewClass {
     public static void main(String[] args) {
-            ProductDAO productDAO = new ProductDAO();
-            System.out.println(productDAO.findAll());
-            
+        ProductServices productServices = new ProductServicesImp();
+        System.out.println(productServices.findByCategoryId(1L));
     }
     
 }

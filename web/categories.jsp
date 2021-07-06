@@ -232,7 +232,7 @@
                                                                 <td>${category.id}</td>
                                                                 <td>${category.category}</td>
                                                                 <td>
-                                                                    <a href="">Display</a> | 
+                                                                    <a href="<%=request.getContextPath()%>/categories?action=display&id=${category.id}">Display</a> | 
                                                                     <a href="<%=request.getContextPath()%>/categories?action=delete&id=${category.id}">Delete</a> | 
                                                                     <a href="<%=request.getContextPath()%>/categories?action=update&id=${category.id}">Update</a> |
                                                                     <a href="">Add product</a>

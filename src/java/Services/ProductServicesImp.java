@@ -44,5 +44,11 @@ public class ProductServicesImp implements ProductServices{
         productDAO = new ProductDAO();
         return productDAO.addProduct(object, object.getCategory().getId());
     }
+
+    @Override
+    public List<Product> findByCategoryId(Long category_Id) {
+        productDAO = new ProductDAO();
+        return productDAO.findByCategoryId(category_Id);
+    }
     
 }

@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import model.Category;
 import services.CategoryServices;
 import services.CategoryServicesImp;
+import services.ProductServices;
+import services.ProductServicesImp;
 
 /**
  *
@@ -29,11 +31,13 @@ public class CategoryServlet extends HttpServlet {
     Category category;
     CategoryServices categoryServices;
     RequestDispatcher dispatcher;
+    ProductServices productServices;
 
     @Override
     public void init() throws ServletException {
         super.init();
         categoryServices = new CategoryServicesImp();
+        productServices = new ProductServicesImp();
     }
     
     
@@ -53,6 +57,8 @@ public class CategoryServlet extends HttpServlet {
                 getDeleteCategory(request, response);
             } else if (action.equalsIgnoreCase("update")) {
                 getUpdateCategory(request, response);
+            } else if (action.equalsIgnoreCase("display")) {
+                getDisplayAllProductsInCategory(request, response);
             }
         }
     }
@@ -89,6 +95,13 @@ public class CategoryServlet extends HttpServlet {
         Long id = Long.parseLong(request.getParameter("id"));
         request.setAttribute("category", categoryServices.findById(id));
         dispatcher = request.getRequestDispatcher("update-category.jsp");  
+        dispatcher.forward(request, response);
+    }
+    
+    protected void getDisplayAllProductsInCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Long id = Long.parseLong(request.getParameter("id"));
+        request.setAttribute("products", productServices.findByCategoryId(id));
+        dispatcher = request.getRequestDispatcher("products.jsp"); 
         dispatcher.forward(request, response);
     }
     
